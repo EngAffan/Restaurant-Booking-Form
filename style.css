@@ -1,0 +1,115 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url("BackGG.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    padding: 15px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.item {
+    background: rgba(237, 237, 237, 0.2);
+    backdrop-filter: blur(10px);
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: solid black 2px;
+}
+
+.item h2 {
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    margin: 0 0 20px 0;
+}
+
+.form {
+    width: 100%;
+}
+
+.form .inputBox {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.form .inputBox input, .form .inputBox textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 35px;
+    border: 1px solid black;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: black;
+    box-shadow: 0 5px 50px rgba(255, 143, 143, 0.683);
+    box-sizing: border-box;
+}
+
+.form .inputBox input::placeholder, .form .inputBox textarea::placeholder {
+    color: black;
+}
+
+.form .inputBox input[type="submit"] {
+    background: rgb(34, 155, 34);
+    color: white;
+    border: none;
+    border: 1px solid black;
+    max-width: auto;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    
+}
+
+textarea {
+    margin-top: 20px;
+    resize: vertical;
+}
+
+.date-time {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.date-time .inputBox {
+    width: 48%;
+}
+
+@media (max-width: 500px) {
+    .date-time {
+        flex-direction: column;
+    }
+    .date-time .inputBox {
+        width: 100%;
+    }
+
+    textarea {
+        margin-top: 10px;
+        resize: vertical;
+    }
+}

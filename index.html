@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <title>Restaurant Reservation Form</title>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            <h2>Booking Form</h2>
+            <div class="form">
+                <form>
+                    <div class="inputBox">
+                        <input type="text" placeholder="Name" required>
+                    </div>
+                    <div class="inputBox">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="inputBox">
+                        <input type="tel" id="phone" name="phone" pattern="[+]{1}[0-9]{11,14}" placeholder="Ph.No" required>
+                    </div>
+                    <div class="inputBox">
+                        <input type="number" id="guests" name="number" placeholder="No. Of Guests" min="0" required>
+                    </div>
+                    <div class="date-time">
+                        <div class="inputBox">
+                            <input type="time" id="time" name="time" required>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" id="datepicker" name="date" required style="height:45px">
+                        </div>
+                    </div>
+                    <div class="inputBox">
+                        <textarea id="message" name="message" rows="4" placeholder="Special requests"></textarea>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" value="Book Now">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    var today = new Date();
+    var formattedToday = today.toISOString().split('T')[0];
+    var picker = new Pikaday({
+        field: document.getElementById('datepicker'),
+        minDate: today,
+        format: 'YYYY-MM-DD',
+        defaultDate: today,
+        setDefaultDate: true
+    });
+    document.getElementById('datepicker').value = formattedToday;
+});
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    function updateTime() {
+        var now = new Date();
+        var hours = String(now.getHours()).padStart(2, '0');
+        var minutes = String(now.getMinutes()).padStart(2, '0');
+        document.getElementById('time').value = `${hours}:${minutes}`;
+    }
+    updateTime(); // Set the initial time
+});
+</script>
+</html>
